@@ -1,13 +1,14 @@
 <div class="lists_background">
   <h1>Your Lists</h1>
-  <p>are displayed</p>
-  <p><strong>Underneath!</strong></p>
 </div>
-<div class="container">
+<div class="container card_container">
   <% @lists.each do |list| %>
-  <div class="listcard">
-    <img src="<%= list.list_url %>" class="" alt="poster image">
-    <h5 class=""> <%= list.name %></h5>
-  </div>
+    <div class="card" style="width: 18rem;">
+      <img src='<%= list.list_url %>' class="card-img-top" alt="List poster">
+      <div class="card-body">
+        <h5 class="card-title"><%= list.name %></h5>
+        <a href=<%= list_path(list) %> class="btn btn-primary">Open list 🍿</a>
+      </div>
+    </div>
   <% end %>
 </div>

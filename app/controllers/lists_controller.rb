@@ -1,10 +1,12 @@
 class ListsController < ApplicationController
+  before_action :find_all_lists
+
   def index
-    @lists = List.all
   end
 
   def new
     @list = List.new
+
   end
 
   def create
@@ -22,7 +24,11 @@ class ListsController < ApplicationController
 
   private
 
+  def find_all_lists
+    @lists = List.all
+  end
+
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :list_url)
   end
 end

@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Create your new list:</h2>
+  <%# how to make this form create a new list in my database? %>
+  <%= simple_form_for @list, url: lists_path, method: :post do |f| %>
+    <%= f.input :name %>
+    <%= f.input :list_url %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
