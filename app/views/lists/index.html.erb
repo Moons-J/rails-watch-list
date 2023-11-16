@@ -1,0 +1,13 @@
+<div class="lists_background">
+  <h1>Your Lists</h1>
+  <p>are displayed</p>
+  <p><strong>Underneath!</strong></p>
+</div>
+<div class="container">
+  <% @lists.each do |list| %>
+  <div class="listcard">
+    <img src="<%= list.list_url %>" class="" alt="poster image">
+    <h5 class=""> <%= list.name %></h5>
+  </div>
+  <% end %>
+</div>
